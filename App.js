@@ -23,8 +23,8 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 const App: () => React$Node = () => {
   return (
     <>
-      <StatusBar backgroundColor='white'></StatusBar>
-      <StatusBar barStyle='dark-content' />
+      <StatusBar backgroundColor='darkgray'></StatusBar>
+      <StatusBar barStyle='light-content' />
       <SafeAreaView style={styles.container}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.titleBar}>
@@ -49,7 +49,7 @@ const App: () => React$Node = () => {
           </View>
 
           <View style={styles.infoContainer}>
-            <Text style={styles.text}>Eder Junior</Text>
+            <Text style={styles.text}>BillyCoding</Text>
             <Text
               style={
                 ([styles.text2],
@@ -106,7 +106,7 @@ const App: () => React$Node = () => {
                   fontFamily: 'Poppins-Bold',
                   fontSize: 18,
                 }}>
-                188
+                9000
               </Text>
             </View>
           </View>
@@ -145,7 +145,7 @@ const App: () => React$Node = () => {
               </View>
             </ScrollView>
 
-            {/* <View style={{marginTop: 20}}>
+            <View style={{marginTop: 20, marginBottom: 30}}>
               <Text
                 style={[
                   styles.poppins,
@@ -153,7 +153,7 @@ const App: () => React$Node = () => {
                 ]}>
                 © MyClass Services
               </Text>
-            </View> */}
+            </View>
           </View>
         </ScrollView>
       </SafeAreaView>
