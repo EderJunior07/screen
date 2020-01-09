@@ -23,28 +23,28 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 const App: () => React$Node = () => {
   return (
     <>
-      <StatusBar backgroundColor='darkgray'></StatusBar>
+      <StatusBar backgroundColor='#333'></StatusBar>
       <StatusBar barStyle='light-content' />
       <SafeAreaView style={styles.container}>
-        <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.titleBar}>
-            <Icon name="keyboard-arrow-left" size={34} color="#4a5ce0" />
-            <Icon name="more-vert" size={34} color="#4a5ce0" />
+            {/*<Icon name="keyboard-arrow-left" size={30} color="#4a5ce0" />
+            <Icon name="more-vert" size={30} color="#4a5ce0" />*/}
           </View>
-
+          
           <View style={{ alignSelf: 'center' }}>
             <View style={styles.profileImage}>
               <Image
-                source={require('./assets/profile.jpg')}
+                source={require('./assets/profile2.jpg')}
                 style={styles.image}
               />
             </View>
             <View style={styles.dm}>
-              <Icon name="message" size={24} color="white" />
+              <Icon name="share" size={22} color="#444" />
             </View>
 
             <View style={styles.add}>
-              <FontAwesome name="photo" size={24} color="#4a5ce0" />
+              <Icon name="person" size={30} color="gold" />
             </View>
           </View>
 
@@ -61,70 +61,67 @@ const App: () => React$Node = () => {
                   fontFamily: 'Poppins-Bold',
                 })
               }>
-              Aluno
+              FullStack Developer
             </Text>
           </View>
 
           <View style={styles.statsContainer}>
+          <ScrollView
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}>
             <View style={styles.statsBox}>
-              <Text style={{ fontSize: 15, fontFamily: 'Poppins-Medium' }}>
-                Informática
+              <Text style={styles.subtitle}>
+                PRO+
               </Text>
               <Text
-                style={{
-                  color: '#AEB5BC',
-                  fontFamily: 'Poppins-Bold',
-                  fontSize: 18,
-                }}>
-                3ºAno
+                style={styles.subvalues}>
+                Dados
+              </Text>
+            </View>
+            <View style={[styles.statsBox, styles.separator]}>
+              <Text style={styles.subtitle}>
+                Habilidade
+              </Text>
+              <Text
+                style={styles.subvalues}>
+                Equipe
               </Text>
             </View>
             <View
               style={[
-                styles.statsBox,
-                { borderColor: '#AEB5BC', borderLeftWidth: 1, borderRightWidth: 1 },
+                styles.statsBox,styles.separator,
               ]}>
-              <Text style={{ fontSize: 15, fontFamily: 'Poppins-Medium' }}>
-                Turma
+              <Text style={styles.subtitle}>
+                IDE
               </Text>
               <Text
-                style={{
-                  color: '#AEB5BC',
-                  fontFamily: 'Poppins-Bold',
-                  fontSize: 18,
-                }}>
-                INF3EM
+                style={styles.subvalues}>
+                VSCode
               </Text>
             </View>
             <View style={styles.statsBox}>
-              <Text style={{ fontSize: 10, fontFamily: 'Poppins-Medium' }}>
-                MyClassPoints
+              <Text style={styles.subtitle}>
+                Projeto
               </Text>
               <Text
                 style={{
-                  color: '#4a5ce0',
+                  color: '#ddd',
                   fontFamily: 'Poppins-Bold',
                   fontSize: 18,
                 }}>
-                9000
+                MyClass
               </Text>
             </View>
+            </ScrollView>
           </View>
-
-          <View style={{marginTop: 32, height:400}}>
+          
+          <View style={{marginTop: 32, height:300, marginBottom:-60}}>
             <ScrollView
               horizontal={true}
               showsHorizontalScrollIndicator={false}>
               <View style={styles.mediaImageContainer}>
                 <Image
-                  source={require('./assets/image4.jpg')}
-                  style={styles.image}
-                  resizeMode="cover"
-                />
-              </View>
-              <View style={styles.mediaImageContainer}>
-                <Image
-                  source={require('./assets/manuel.jpg')}
+                  source={require('./assets/image1.jpg')}
                   style={styles.image}
                   resizeMode="cover"
                 />
@@ -136,25 +133,21 @@ const App: () => React$Node = () => {
                   resizeMode="cover"
                 />
               </View>
-              <View style={styles.mediaImageContainer}>
-                <Image
-                  source={require('./assets/manuel.jpg')}
-                  style={styles.image}
-                  resizeMode="cover"
-                />
-              </View>
+             
             </ScrollView>
 
-            <View style={{marginTop: 20, marginBottom: 30}}>
+            
+              </View>
+
+          <View style={{marginTop: 0, marginBottom: 20}}>
               <Text
                 style={[
                   styles.poppins,
-                  {alignSelf: 'center', color: '#A5B5DD'},
+                  {alignSelf: 'center', color: 'lightgray'},
                 ]}>
-                © MyClass Services
+                by BillyCoding 
               </Text>
             </View>
-          </View>
         </ScrollView>
       </SafeAreaView>
     </>
@@ -164,7 +157,7 @@ const App: () => React$Node = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#333',
   },
   titleBar: {
     flexDirection: 'row',
@@ -174,8 +167,8 @@ const styles = StyleSheet.create({
   },
   text: {
     fontFamily: 'Poppins-Bold',
-    fontSize: 34,
-    color: '#000',
+    fontSize: 25,
+    color: '#eee',
   },
   image: {
     flex: 1,
@@ -193,7 +186,7 @@ const styles = StyleSheet.create({
 
   dm: {
     elevation: 20,
-    backgroundColor: '#4a5ce0',
+    backgroundColor: 'gold',
     position: 'absolute',
     top: 20,
     width: 40,
@@ -205,12 +198,12 @@ const styles = StyleSheet.create({
 
   add: {
     elevation: 20,
-    backgroundColor: '#FFF',
+    backgroundColor: '#444',
     position: 'absolute',
     bottom: 0,
     right: 10,
-    width: 60,
-    height: 60,
+    width: 50,
+    height: 50,
     borderRadius: 40,
     alignItems: 'center',
     justifyContent: 'center',
@@ -235,7 +228,12 @@ const styles = StyleSheet.create({
   statsBox: {
     alignItems: 'center',
     flex: 1,
+    width: 110,
+    height: 60,
+    borderRadius: 20,
+    marginHorizontal: 5,
   },
+  separator:{ borderColor: '#AEB5BC', borderLeftWidth: 1, borderRightWidth: 1 },
 
   mediaImageContainer: {
     elevation: 20,
@@ -244,6 +242,18 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     overflow: 'hidden',
     marginHorizontal: 10,
+  },
+  subtitle:{ 
+    fontSize: 15, 
+    fontFamily: 'Poppins-Medium' ,
+    color: 'gold'
+  },
+  subvalues:{
+    fontSize: 14,
+    color: '#AEB5BC',
+    position: 'relative',
+    marginTop: -1,
+    fontFamily: 'Poppins-Bold',
   },
 });
 
